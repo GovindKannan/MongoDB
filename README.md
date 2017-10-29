@@ -18,3 +18,16 @@
   # We can associate schema to define structure of record (JSON).
   # Models represent records in collection.
   # We will create a model and record in this tutorial. (Refer model1.js).
+
+# Lesson 4 Mocha Testing framework
+  # Mocha helps us in testing our application.
+  # We will use mocha to perform CRUD operation on MongoDB in our later tutorials.
+
+  # Use NPM to install Mocha
+    npm install mocha --save
+
+  # Created test_Crud.js (with a dummy test for now)
+    # Created a test suite ('describe')
+    # Created a test ('it' with dummy test)
+  # Updated Package.json to perform mocha test
+  # The test js file created should be directly with in test directory -- check why?
