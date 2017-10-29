@@ -1,0 +1,25 @@
+{
+  "name": "mongo-db",
+  "version": "1.0.0",
+  "description": "MongoDB tutorial for Begginers",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GovindKannan/MongoDB.git"
+  },
+  "keywords": [
+    "MongoDB"
+  ],
+  "author": "Govind Kannan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GovindKannan/MongoDB/issues"
+  },
+  "homepage": "https://github.com/GovindKannan/MongoDB#readme",
+  "dependencies": {
+    "mongoose": "^4.12.4"
+  }
+}
