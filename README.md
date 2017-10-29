@@ -2,14 +2,15 @@ Title:
   CRUD testing using mocha
 
 Prerequisites:
-  Set up mocha as we have done with Lesson: 4
+  The promise that we had used 'then()' in our previous tutorial is depricated. As a result, we will be using ES6 promises.
+
+  We will also create a hook to ensure that create connection in connection.js is executed before the test execution.
 
 Changes made:
-  * We will update the test case in test_CRUD.js to add a case to insert dummy data to the MongoDB.
-  * Since the call save() is asynchronous, we will use the default promise method 'then()' to confirm if the data is entered in the DB.
-  * done() is a call back method used to tell mocha that the case is completed.
-  * Run the test command to test the changes.
-    npm run test
+  * In connection.js, we will update mongoose.Promise to point to default ES6 promise.
+  * In connection.js, we will add a hook 'before' and cut paste the connection code into it so that connections are made just before tests are executed.
+  * We also added a call back method done, to be called after connection is made.
+
 Tools used:
   Editor: Atom
 
