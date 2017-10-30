@@ -4,21 +4,21 @@ Title:
 Prerequisites:
   * Set up Mocha
   * Set up Mongo
-  * insert some records to mocha db
 
 Overview:
-  In this tutorial we will create some unit tests to update records using mongoose.
+  Mongo is not a relational database. However sometimes we need to relate two or more records which are functionally dependent on each other.
 
-  * obj.update()- Here we create a new object with criteria and have the record updated in database.
-  * ClassName.update() - Here we use the class/Model template to find and update record(s) from the database. Criteria is passed as argument.
-  * ClassName.findOneAndUpdate() - Here we use the class template to find a record and update a particular record from database.  
+  The conventional and easy way is to add the related document as an array of objects with in the document itself. This will eliminate the need for creating a separate record and linking it to the parent record
+  * Example Team document will have a array of players with in the team JSON instead of having a separate collection on players and linking to Team collection.
 
-  We will also try and use some update operators. Update operators are just some tools we can use to update some parameters in our record. Some examples are provided below.
-   * increment operator - $inc -- increments the records by param passed (even negative values are allowed).
-   * TODO: Try out the remaining operators after researching!
+  Note that the array objects will have a separate schema which is reffered in our parent collection schema.
+  * record.collectionName.push({param:val, param:val});  to add additional values
+  * regular update script to save the data back to db after adding value.
+  * record.collectionName.pull is used to remove data from child collection.
 
 Changes made:
-  * In test CRUD.js, we have added a new test to update the record.
+  * Create a new model team, and add players as array of objects as relational data.
+  * Create a new test suite test_team.js to add script to create a new record team which has players as array of objects.
 Tools used:
   Editor: Atom
 
