@@ -15,3 +15,11 @@ before(function(done){
         console.log('Connection Test Failed!!', error);
   });
 });
+
+//drop the collections to clean the test db before every test case.
+beforeEach(function(){
+  //Drop the collections
+  mongoose.connection.collections.model1_records.drop(function(){
+    done();
+  });
+});
