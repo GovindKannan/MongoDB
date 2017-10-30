@@ -42,6 +42,27 @@ describe('CRUD Test to Mongo', function(){
     done();
   });
 
+  it('Update record', function(done){
+    //Search for records
+    Model1.findOneAndUpdate({param2:1},{param1:'Updated Value'}).then(function(){
+      Model1.findOne({param2:1}).then(function(result){
+        assert(result.param1==='Updated Value');
+      })
+    });
+    done();
+  });
+
+  it('Update record using operator', function(done){
+    //Search for records
+    Model1.update({param2:1},{$inc: {param2:1}}).then(function(){
+      Model1.findOne({param2:1}).then(function(result){
+        assert(result===null);
+      })
+    });
+    done();
+  });
+
+
   it('Delete record', function(done){
     //Search for records
     Model1.findOneAndRemove({param2:1}).then(function(){
