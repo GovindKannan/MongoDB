@@ -42,4 +42,15 @@ describe('CRUD Test to Mongo', function(){
     done();
   });
 
+  it('Delete record', function(done){
+    //Search for records
+    Model1.findOneAndRemove({param2:1}).then(function(){
+      Model1.findOne({param2:1}).then(function(result){
+        assert(result===null);
+      })
+    });
+    done();
+  });
+
+
 });

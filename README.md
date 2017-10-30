@@ -4,16 +4,17 @@ Title:
 Prerequisites:
   * Set up Mocha
   * Set up Mongo
+  * insert some records to mocha db
 
 Overview:
-  We will be exploring the mongoose methods find(criteria) and findOne(criteria) in this tutorial.
+  Now that we have inserted some records in Mocha DB, lets see how we can delete records from the database. The below three methods are common to perform the operation.
 
-  * find()- This method will find all the records that matches the criteria.
-  * findOne() - This will return the first occurance of the record.
+  * obj.remove- Here we create a new object with criteria and have the record removed from database.
+  * ClassName.remove() - Here we use the class/Model template to find and remove record from the database. Criteria is passed as argument.
+  * ClassName.findOneAndRemove() - Here we use the class template to find a record and remove a particular record from database.  
 
 Changes made:
-  * In connection.js, we will add a new beforeEach hook to drop test collection before each test case is executed in mocha.
-
+  * In test CRUD.js, we have added a new test to delete the record.
 Tools used:
   Editor: Atom
 
